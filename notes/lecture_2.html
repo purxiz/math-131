@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>Lecture 1</title>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+<link rel="stylesheet" type="text/css" href="_styles.css" />
+</head>
+
+<body>
+<div class = "border">
+<div class="wrap">
+<h2> Rate of Convergence</h2>
+Suppose:
+\[
+\beta_n \rightarrow 0 \textrm{ as } n \rightarrow \infty \textrm{ and } \alpha_n \rightarrow \alpha \textrm{ as } n \rightarrow \infty
+\]
+If \(|\alpha_n-\alpha| \leq C|\beta_n|\), for \(n\) large enough, \(C\) being a constant, then \(alpha_n\) converges to \(\alpha\) with the rate \(O(\beta_n)\), aka
+\[
+\alpha_n=\alpha+O(\beta_n)
+\]
+NB: \(O(f(n))\) is referred to as "Big-O" notation
+<h3>example</h3>
+\[
+y_n=a+\frac{b}{n}\rightarrow a \textrm{ as } n \rightarrow \infty
+\]
+AND
+\[
+\frac{1}{n} \rightarrow 0 \textrm{ as } n \rightarrow \infty
+\]
+plug it in to the above definition:
+\[
+|y_n-a|=|\frac{b}{n}| \leq |b||\frac{1}{n}|
+\]
+Therefore \(y_n\) converges to \(a\) with a rate of convergence of \(O(\frac{1}{n})\)
+<h4>Notations (other way (not big-O))</h4>
+Suppose
+\[
+G(h) \rightarrow 0 \textrm{ as } h \rightarrow 0 \textrm{ and } F(h) \rightarrow L \textrm{ as } h \rightarrow 0
+\]
+Then, if
+\[
+|F(h)-L| \leq C|G(h)|
+\]
+F(h) converges to L with a rate of convergence \(O(G(n))\)
+<h3>example</h3>
+\[
+f(h)=cos(h)
+\]
+Find the rate of convergence of \(f\) as \(h \rightarrow 0\)
+<ol>
+<li> Using Taylor's Theorem with n=1
+<li> Using Taylor's Theorem with n=3
+</ol>
+Reclal that the Taylor Theorem expansion is of the form
+\[
+f(x) = f(x_o) + \frac{f'(x_o)}{1!}(x-x_o) + \frac{f''(x_o)}{2!}(x-x_o)^2 + \frac{f^n(\xi(x))}{n!}(x-x_o)^n
+\]
+The Taylor Theorem of for 1. above, would therefore include term 0 and 1, and the remainder term, so:
+\[
+f(x) = f(x_o) + \frac{f'(x_o)}{1!}(x-x_o) + \frac{f''(\xi(x))}{2!}(x-x_o)^2
+\]
+plugging in values for cos(x) as given in the example
+\[
+f(x) = cos(0) -sin(0)(h-0) - \frac{cos(\xi(h))}{2}h^2
+\]
+\(cos(h) = F(h)\) from our notation definition above, so we can plug into the formula, also above
+\[
+|cos(h)-1|=|\frac{cos(\xi(h))}{2}h^2| \leq \frac{1}{2}h^2
+\]
+The \(\frac{1}{2}\) comes from the fact that cos is bound between -1 and 1, so the maximum value of \(\frac{cos(\xi(h))}{2}h^2\) is \(\frac{1}{2}\).
+The rate of convergence is therefore \(O(h^2)\). Problem 2 from the example will be left to the reader.
+</div>
+</div>
+</body>
+</html>
