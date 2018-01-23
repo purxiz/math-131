@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Lecture 1</title>
+<title>Lecture 2</title>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
 <link rel="stylesheet" type="text/css" href="_styles.css" />
 </head>
@@ -68,6 +68,47 @@ f(x) = cos(0) -sin(0)(h-0) - \frac{cos(\xi(h))}{2}h^2
 \]
 The \(\frac{1}{2}\) comes from the fact that cos is bound between -1 and 1, so the maximum value of \(\frac{cos(\xi(h))}{2}h^2\) is \(\frac{1}{2}\).
 The rate of convergence is therefore \(O(h^2)\). Problem 2 from the example will be left to the reader.
+<h2>Root Finding Problems</h2>
+Goal: Solve \(f(x)=0\) <br>
+for an easy example, Solve \(x^2-1=0\). However, for more complicated examples, the solution cannot easily be calculated without numeric solutions. For example, try to solve:
+\[
+cos(x) -x =0
+\]
+If you can't do it, don't worry. That's why numeric methods exist. We will study three methods for root finding problems. They are all very efficient, but all have benefits and drawbacks.
+<h3>Method 1: Bisection Method</h3>
+Let's say I wanted to solve \(f(x) = 0\) over some interval \([a,b]\). For now, we will simply assume \(f\epsilon C([a,b])\), i.e. that \(f\) is continuous over the interval \([a,b]\). Let's say that:
+\[
+f(a)*f(b)\lt0
+\]
+We can easily see that if this is true, then \(f(a)\) and \(f(b)\) have opposite signs. For an extremely simple example, we can look at the graph of \(f(x)\):
+<img src="https://i.imgur.com/6UMJ2gv.png"  align="center"/><br>
+Let's say that \(a=-1\) and \(b=1\), so \(f(a)=-1\) and \(f(b=1)\). From here it should be obvious that somewhere between -1 and 1, the line must cross the x axis at least once. This is called the Intermediate Value Theorem. In math terms:
+\[
+\exists c \epsilon [a,b] / f(c) = 0
+\]
+Or in English, there exists some point \(C\) in \([a,b]\) such that \(f(c)=0\). The idea of the bisection method is to continue halving the interval, and comparing the signs of \(f(a)\) and \(f(b)\) to get closer and closer to the root. <br>
+Bisection is nice because it always finds a solution. However, it doesn't necessarily find ALL solutions. For example, if there are multiple zeros in \([a,b]\), bisection will not find more than one.
+<h4>Basic Pseudocode for Bisection Method</h4>
+<pre><code>
+  INPUT: Function f, endpoint values a, b, tolerance TOL, maximum iterations NMAX
+  CONDITIONS: a < b, either f(a) < 0 and f(b) > 0 or f(a) > 0 and f(b) < 0
+  OUTPUT: value which differs from a root of f(x)=0 by less than TOL
+
+  N ← 1
+  While N ≤ NMAX # limit iterations to prevent infinite loop
+    c ← (a + b)/2 # new midpoint
+    If f(c) = 0 or (b – a)/2 < TOL then # solution found
+      Output(c)
+      Stop
+    EndIf
+    N ← N + 1 # increment step counter
+    If sign(f(c)) = sign(f(a)) then a ← c else b ← c # new interval
+  EndWhile
+  Output("Method failed.") # max number of steps exceeded
+</code></pre>
+The pseudocode gone over in class can be found in the lecture slides.
+
+
 </div>
 </div>
 </body>
