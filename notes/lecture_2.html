@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Lecture 2</title>
+<title>Lecture 1</title>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
 <link rel="stylesheet" type="text/css" href="_styles.css" />
 </head>
@@ -8,107 +8,114 @@
 <body>
 <div class = "border">
 <div class="wrap">
-<h2> Rate of Convergence</h2>
-Suppose:
-\[
-\beta_n \rightarrow 0 \textrm{ as } n \rightarrow \infty \textrm{ and } \alpha_n \rightarrow \alpha \textrm{ as } n \rightarrow \infty
-\]
-If \(|\alpha_n-\alpha| \leq C|\beta_n|\), for \(n\) large enough, \(C\) being a constant, then \(alpha_n\) converges to \(\alpha\) with the rate \(O(\beta_n)\), aka
-\[
-\alpha_n=\alpha+O(\beta_n)
-\]
-NB: \(O(f(n))\) is referred to as "Big-O" notation
-<h3>example</h3>
-\[
-y_n=a+\frac{b}{n}\rightarrow a \textrm{ as } n \rightarrow \infty
-\]
-AND
-\[
-\frac{1}{n} \rightarrow 0 \textrm{ as } n \rightarrow \infty
-\]
-plug it in to the above definition:
-\[
-|y_n-a|=|\frac{b}{n}| \leq |b||\frac{1}{n}|
-\]
-Therefore \(y_n\) converges to \(a\) with a rate of convergence of \(O(\frac{1}{n})\)
-<h4>Notations (other way (not big-O))</h4>
-Suppose
-\[
-G(h) \rightarrow 0 \textrm{ as } h \rightarrow 0 \textrm{ and } F(h) \rightarrow L \textrm{ as } h \rightarrow 0
-\]
-Then, if
-\[
-|F(h)-L| \leq C|G(h)|
-\]
-F(h) converges to L with a rate of convergence \(O(G(n))\)
-<h3>example</h3>
-\[
-f(h)=cos(h)
-\]
-Find the rate of convergence of \(f\) as \(h \rightarrow 0\)
+<h1>Round-off Error</h1>
+
+Suppose that \(p^*\) approximates \(p\): <br>
 <ol>
-<li> Using Taylor's Theorem with n=1
-<li> Using Taylor's Theorem with n=3
+<li> \(p-p^*\) = the actual Error
+<li> \(\frac{|{p-p^*}|}{|p|}\) is the relative error
+<li> \(|p-p^*|\) is the absolute error
 </ol>
-Reclal that the Taylor Theorem expansion is of the form
-\[
-f(x) = f(x_o) + \frac{f'(x_o)}{1!}(x-x_o) + \frac{f''(x_o)}{2!}(x-x_o)^2 + \frac{f^n(\xi(x))}{n!}(x-x_o)^n
-\]
-The Taylor Theorem of for 1. above, would therefore include term 0 and 1, and the remainder term, so:
-\[
-f(x) = f(x_o) + \frac{f'(x_o)}{1!}(x-x_o) + \frac{f''(\xi(x))}{2!}(x-x_o)^2
-\]
-plugging in values for cos(x) as given in the example
-\[
-f(x) = cos(0) -sin(0)(h-0) - \frac{cos(\xi(h))}{2}h^2
-\]
-\(cos(h) = F(h)\) from our notation definition above, so we can plug into the formula, also above
-\[
-|cos(h)-1|=|\frac{cos(\xi(h))}{2}h^2| \leq \frac{1}{2}h^2
-\]
-The \(\frac{1}{2}\) comes from the fact that cos is bound between -1 and 1, so the maximum value of \(\frac{cos(\xi(h))}{2}h^2\) is \(\frac{1}{2}\).
-The rate of convergence is therefore \(O(h^2)\). Problem 2 from the example will be left to the reader.
-<h2>Root Finding Problems</h2>
-Goal: Solve \(f(x)=0\) <br>
-for an easy example, Solve \(x^2-1=0\). However, for more complicated examples, the solution cannot easily be calculated without numeric solutions. For example, try to solve:
-\[
-cos(x) -x =0
-\]
-If you can't do it, don't worry. That's why numeric methods exist. We will study three methods for root finding problems. They are all very efficient, but all have benefits and drawbacks.
-<h3>Method 1: Bisection Method</h3>
-Let's say I wanted to solve \(f(x) = 0\) over some interval \([a,b]\). For now, we will simply assume \(f\epsilon C([a,b])\), i.e. that \(f\) is continuous over the interval \([a,b]\). Let's say that:
-\[
-f(a)*f(b)\lt0
-\]
-We can easily see that if this is true, then \(f(a)\) and \(f(b)\) have opposite signs. For an extremely simple example, we can look at the graph of \(f(x)\):
-<div align="center"><img src="https://i.imgur.com/6UMJ2gv.png"/></div><br>
-Let's say that \(a=-1\) and \(b=1\), so \(f(a)=-1\) and \(f(b=1)\). From here it should be obvious that somewhere between -1 and 1, the line must cross the x axis at least once. This is called the Intermediate Value Theorem. In math terms:
-\[
-\exists c \epsilon [a,b] / f(c) = 0
-\]
-Or in English, there exists some point \(C\) in \([a,b]\) such that \(f(c)=0\). The idea of the bisection method is to continue halving the interval, and comparing the signs of \(f(a)\) and \(f(b)\) to get closer and closer to the root. <br>
-Bisection is nice because it always finds a solution. However, it doesn't necessarily find ALL solutions. For example, if there are multiple zeros in \([a,b]\), bisection will not find more than one.
-<h4>Basic Pseudocode for Bisection Method</h4>
-<pre><code>
-  INPUT: Function f, endpoint values a, b, tolerance TOL, maximum iterations NMAX
-  CONDITIONS: a < b, either f(a) < 0 and f(b) > 0 or f(a) > 0 and f(b) < 0
-  OUTPUT: value which differs from a root of f(x)=0 by less than TOL
+The relative error is usually more significant, i.e. more practical to use
+<h3>example:</h3>
+<ol>
+<li> \(p = 0.003, p^*=0.0031\) <br>
+actual error: -0.0001 <br>
+relative error: 0.03333333 <br>
+absolute error: 0.0001
+<li> \(p = 3000, p^* = 3100\) <br>
+actual error: -100 <br>
+relative error: 0.03333333 <br>
+absolute error: 100
+</ol>
 
-  N ← 1
-  While N ≤ NMAX # limit iterations to prevent infinite loop
-    c ← (a + b)/2 # new midpoint
-    If f(c) = 0 or (b – a)/2 < TOL then # solution found
-      Output(c)
-      Stop
-    EndIf
-    N ← N + 1 # increment step counter
-    If sign(f(c)) = sign(f(a)) then a ← c else b ← c # new interval
-  EndWhile
-  Output("Method failed.") # max number of steps exceeded
-</code></pre>
-The pseudocode gone over in class can be found in the lecture slides.
+<h2>Finite digit numbers representation (floating point numbers)</h2>
+\[
+r=\pm m*10^c
+\]
+<p>
+where \(m\) refers to the mantissa and \(c\) refers to the characteristic.
+This format is used to store most floating numbers in computers.
+\(m\) is of the form \(m=d_1,d_2,d_3...d_k\), where \(k\) is the number of significant digits in the number being represented.
+</p>
+We need a way to deal with non-finite digit numbers, for example
+\(0.3178124655789\)
+Let's say we want it to be 4 significant digits long. One method is to truncate, i.e. end up with \(0.3178\).
+The other way is to round the value, which is simply rounding the \(8\) in this case based on the following digit. If that digit is \(\geq 5\), you round up, otherwise you round down.
+For example, chopping the number above at 3 significant digits using round-off would leave you with \(0.318\)
+
+<h2>Errors</h2>
+Both of these methods "lose" information, which causes errors. These errors are carried over future operations as well.
+
+For example,
+\[
+\frac{1}{3}+\frac{3}{11}+\frac{3}{20}=0.75606060...
+\]
+if you round, you might get
+\[
+0.3333 + 0.2727+0.15 = 0.756
+\]
+which is not exact. It is essential then to characterize the margin for which you know the accuracy of your approximation. In other words, to know how many digits of your answer can be trusted.
+
+<h3>Definition</h3>
+\(p^*\) approximates \(p\) to to \(t\) significant digits:
+\[
+\frac{|p-p^*|}{|p|} \leq 5*10^{-t}
+\]
+Example, for \(p=900\), Find the largest interval of values \(p^*\) to approximate \(p\) up to \(10^{-10}\)
+<ol>
+<li>
+\[
+\frac{|900-p^*|}{|900|} \leq 5*10^{-10}
+\]
+<li>
+\[
+|900-p^*| \leq 5*10^{-10}*|900|
+\]
+<li> Here we split into two equations, to get rid of absolute value
+\[
+900-p^* \leq 900*5*10^{-10} \textrm{ AND } 900-p^* \geq 900*5*10^{-10}
+\]
+</ol>
+Solving for a range for \(p^*\) from here is trivial, and will be left to the reader.
 
 
+<h2>Algorithms</h2>
+An algorithm is a procedure that describes in an unambiguous way a phenomenon that is composed of a finite number of steps to be performed in a specific order.
+Properties to look for in a good algortihm
+<ul>
+<li> "short running time" aka FAST
+<li> The algorithm returns the correct result aka ACCURATE
+<li> Do not take up too many system resources aka EFFICIENT
+<li> The algorithm should be able to handle bad input aka ROBUST/STABLE
+<li> In other words, small errors in data should only produce small errors in result, not large Errors
+</ul>
+There are two main types of error
+<ol>
+<li> The error is LINEAR (cumulative error):
+\[
+\epsilon_n=C_n+\epsilon_0
+\]
+Where \(\epsilon_n\) is the error at the \(n^{th}\) step, \(C_n\) is some constant, and \(\epsilon_0\) is the error at step 0.
+<li> The error is EXPONENTIAL:
+\[
+\epsilon_n = C^n\epsilon_0
+\]
+Exponential error increases with each step, and is therefore almost always worse than Linear error.
+</ol>
+<h2> Rate of Convergence </h2>
+How fast (how many steps) it takes a solution to arrive at an answer, or more specifically, characterizes how rapidly the algorithm converges.
+This is equivalent to measuring how fast the error between approximation and the exact solution goes to 0.
+
+We will use Big-O notation to define rates of convergence. Suppose we have a sequence such that
+\[
+\beta_n \rightarrow0 \textrm{ as } n \rightarrow \infty \textrm{ and } \alpha_n \rightarrow \alpha \textrm{ as } n \rightarrow \infty
+\]
+IF
+\[
+|\alpha_n - \alpha| \leq C|\beta_n| \textrm { and } \alpha_n = \alpha + O(\beta_n)
+\]
+then \(\alpha_n\) converges to \(\alpha\) with a rate of \(O(\beta_n)\)
 </div>
 </div>
 </body>
