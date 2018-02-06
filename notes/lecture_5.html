@@ -1,14 +1,6 @@
-<html>
-<head>
-<title>Lecture 4</title>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
-<link rel="stylesheet" type="text/css" href="_styles.css" />
-</head>
+## Lecture 5
 
-<body>
-<div class = "border">
-<div class="wrap">
-<h2>Newton's Method</h2>
+## Newton's Method
 Newton's Method is the most powerful root finding algorithm.
 There are several methods to find Newton's Method, the first is to use Taylor's Theorem, reproduced here:
 \[
@@ -32,18 +24,18 @@ The above is what we are left with taking a Taylor Polynomial with n = 1, and di
 x \approx x_0 - \frac{f(x_0)}{f'(x_0)}
 \]
 The above is Newton's Method. Note that an important constraints is that \(f'(x_0) \ne 0\). This doesn't make the method weaker, because if \(f'(x_0) = 0\), then you can see \(f(x_0)\) must equal zero, and therefore \(x_0\) is a root.
-<h3>Geometric Interpretation of Newton's Method</h3>
+### Geometric Interpretation of Newton's Method
 Start with the equation for the tangent line:
 \[
 y=f(x_0)+f'(x_0)(x-x_0)
 \]
-<div align="center"><img src="https://i.imgur.com/Um6kQQx.png"/></div><br>
+![Tangent Lines](https://i.imgur.com/Um6kQQx.png)
 If you take the tangent line at the point \(x_0,f(x_0)\) shown in the image above, you will see that it appears somewhat close to the root. The closer your \(x_0\) gets to the true root x, the closer the tangent line will also be. Much like bisection method, this is an iterative approach where we move closer and closer to the true root with each iteration.<br>
 To get our new \(x_0\) for the next iteration, we can simply look at where the tangent line of the previous \(x_0\) intersects with the x-axis.
-<div align="center"><img src="https://i.imgur.com/mbKSRDw.png"/></div><br>
+![Newton's Method](https://i.imgur.com/mbKSRDw.png)
 img src: math.lamar.edu
-<h3>Pseudocode</h3>
-<pre><code>
+## Pseudocode
+```
   x0 = 1 %The initial value
   f = @(x) x^2 - 2 %The function whose root we are trying to find
   fprime = @(x) 2*x %The derivative of f(x)
@@ -79,13 +71,13 @@ img src: math.lamar.edu
   else
    ... % did not converge
   end
-</pre></code>
+```
 The code given in lecture is given on the lecture slides.
 
-<h3>Pros and Cons</h3>
+### Pros and Cons
 You only need one guess for Newton's Method to work, it converges very quickly, and it can find roots of functions that only "touch" the x-axis, like \(f(x)=x^2\).<br>
 On the other hand, Newton's Method does not always converge. You also need a GOOD guess. You also need \(f'(x) \ne 0\).
-<h3>What if we don't know f prime</h3>
+### What if we don't know f prime
 You can simply approximate f prime by
 \[
 f' \approx \frac{f(x)-f(x_0)}{x-x_0}
@@ -95,9 +87,5 @@ If you use this approximation to replace f' in Newton's Method, it is known as t
 x_i+1 = x_i - \frac{f(x_i)}{\frac{f(x_i)-f(x_{i-1})}{x_i-x_{i-1}}}
 \]
 This is now your iterated term for SECANT Method.
-<h3>Rate of Convergence</h3>
+### Rate of Convergence
 If you have an initial guess that is close to the solution, it converges very quickly.
-</div>
-</div>
-</body>
-</html>
