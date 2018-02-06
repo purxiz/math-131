@@ -1,6 +1,6 @@
 ## Lecture 6
 
-## Interpolation<
+## Interpolation
 Based on some data (a discrete series of points), find some new data (in between, after, before the points, etc.).
 In order to "connect the dots," we will be using polynomial approximation. This means we will be drawing polynomials that match as closely as possible to the data we have available. We can then solve for a point on that polynomial to find our "new data."
 Polynomials are nice because they are easy to integrate and differentiate, and return other polynomials for either operation. (i.e. the derivative of a polynomial is a polynomial, same for integral).
@@ -100,7 +100,7 @@ L_{2,1}(x) = \frac{(x)(x-2)}{-1} & L_{2,2}(x) = \frac{(x)(x-1)}{2}
 \]
 Phew, that took forever. Hopefully that made sense. Hypothetically, to actually finish the interpolant you would plug these all into
 \[
-P(x) = \sum_{k=0}^nf(x_k)L_{n,k}(x)
+P(x) = \sum\limits_{k=0}^nf(x_k)L_{n,k}(x)
 \]
 Which would give you something like:
 \[
