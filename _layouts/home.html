@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<div class="home">
+  {% if page.title %}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {% endif %}
+
+  {{ content }}
+  <h2> Lectures notes </h2>
+  <ul>
+    {% for lecture in site.lectures %}
+    <li>
+      <a href='{{lecture.url}}'>{{lecture.title|capitalize}}</a>
+    </li>
+    {% endfor %}
+  <ul>
+  
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+

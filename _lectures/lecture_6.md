@@ -1,6 +1,8 @@
-## Lecture 6
+---
+title: lecture 6
+---
 
-## Interpolation<
+## Interpolation
 Based on some data (a discrete series of points), find some new data (in between, after, before the points, etc.).
 In order to "connect the dots," we will be using polynomial approximation. This means we will be drawing polynomials that match as closely as possible to the data we have available. We can then solve for a point on that polynomial to find our "new data."
 Polynomials are nice because they are easy to integrate and differentiate, and return other polynomials for either operation. (i.e. the derivative of a polynomial is a polynomial, same for integral).
