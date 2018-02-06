@@ -32,14 +32,18 @@ $$
 Therefore \\(y_n\\) converges to \(a\) with a rate of convergence of \(O(\frac{1}{n})\)
 ### Notations (other way (not big-O))
 Suppose
+
 $$
 G(h) \rightarrow 0 \textrm{ as } h \rightarrow 0 \textrm{ and } F(h) \rightarrow L \textrm{ as } h \rightarrow 0
 $$
+
 Then, if
+
 $$
 |F(h)-L| \leq C|G(h)|
 $$
-F(h) converges to L with a rate of convergence \(O(G(n))\)
+
+F(h) converges to L with a rate of convergence \\(O(G(n))\\)
 ## example
 $$
 f(h)=cos(h)
