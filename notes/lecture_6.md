@@ -6,8 +6,10 @@ In order to "connect the dots," we will be using polynomial approximation. This 
 Polynomials are nice because they are easy to integrate and differentiate, and return other polynomials for either operation. (i.e. the derivative of a polynomial is a polynomial, same for integral).
 Another handy thing about polynomials is that we can always find a polynomial that covers every point in our data set. The theorem (Weirestrass Theorem) is as follows:
 \[
-\textrm{given } f \in C([a,b]), \forall \in > 0, \exists P(x) \textrm{ such that } |f(x)-P(x)| < \in, \forall x \in [a,b] \\
+\begin{array}{l}
+\textrm{given } f \in C([a,b]), \forall \epsilon > 0, \exists P(x) \textrm{ such that } |f(x)-P(x)| < \epsilon, \forall x \in [a,b] \\
 \textrm{Where } P(x) \textrm{ is a polynomial}
+\end{array}
 \]
 
 In other words, given some continuous function \(f\), for all \(\in \gt 0\), there exists some polynomial \(P(x)\), such that the absolute value of \(f(x)-P(x)\) is less than \(\in\) for all \(x\) in the given interval \([a,b]\).
@@ -49,9 +51,11 @@ L_{n,k}(x) = \frac{\prod_{j=0,j \ne k}^n(x-x_j)}{\prod_{j=0,j \ne k}^n(x_k-x_j)}
 **NOTE:** Sorry about the indices not showing up properly on the product/multiplication sum symbols, I'll fix that when I figure out how.
 The index \(n\) is the degree, and the index \(k\) is the position. The Lagrange Polynomial is the basis for interpolation, just in case you weren't confused enough already. Anyway, here's the theorem:
 \[
+\begin{array}{l}
 \textrm{Given } x_0, x_1,..., x_n \textrm{ and } f(x_0), f(x_1),...,f(x_n) \\
 \textrm{There exists a UNIQUE Polynomial of degree at most n such that } \\
 f(x_k) = P(x_k) \textrm{ for } k=0,1,...,n
+\end{array}
 \]
 In fact, we can go so far as to say that such a polynomial is of the following form:
 \[
@@ -60,8 +64,10 @@ P(x) = \sum_{k=0}^nf(x_k)L_{n,k}(x)
 **NOTE:** Typing out actual examples of these is going to be horrible for me, so please appreciate my work from here on out:
 ### Example
 \[
+\begin{array}{l}
 x_0 = 0, x_1 = 1, x_2 = 2 \\
 f(x_0) = 1.3, f(x_1)=-1.2, f(x_2)=\sqrt{3}
+\end{array}
 \]
 Create the Lagrange Interpolant given the above data.
 Let's take a look at the first Lagrange Polynomial, \(L_{2,0}\)

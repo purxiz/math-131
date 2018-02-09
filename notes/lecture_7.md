@@ -100,10 +100,10 @@ P(x) = f(x_0) + \sum\limits_{k=1}^nf[x_0,...,x_k](x-x_0)(x-x_1)...(x-x_{k-1})
 This Lagrange Interpolant can be computed easily by using **Newton's Divided Differences**
 Let's start with a quick example:
 \[
-x_0 = 0, x_1 =1, x_2 = 2, x_3 = 3
-\]
-\[
+\begin{array}{c}
+x_0 = 0, x_1 =1, x_2 = 2, x_3 = 3 \\
 f(x_0) = 1.3, f(x_1) = 1, f(x_2) = 0.5, f(x_3) = 0.2
+\end{array}
 \]
 What does \(P(x)\) equal?
 Well, let's let's start with \(k=1\) for the above equation, and get:
