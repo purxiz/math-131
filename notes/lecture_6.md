@@ -6,11 +6,11 @@ In order to "connect the dots," we will be using polynomial approximation. This 
 Polynomials are nice because they are easy to integrate and differentiate, and return other polynomials for either operation. (i.e. the derivative of a polynomial is a polynomial, same for integral).
 Another handy thing about polynomials is that we can always find a polynomial that covers every point in our data set. The theorem (Weirestrass Theorem) is as follows:
 \[
-\textrm{given } f \epsilon C([a,b]), \forall \epsilon > 0, \exists P(x) \textrm{ such that } |f(x)-P(x)| < \epsilon, \forall x \epsilon [a,b] \\
+\textrm{given } f \in C([a,b]), \forall \in > 0, \exists P(x) \textrm{ such that } |f(x)-P(x)| < \in, \forall x \in [a,b] \\
 \textrm{Where } P(x) \textrm{ is a polynomial}
 \]
 
-In other words, given some continuous function \(f\), for all \(\epsilon \gt 0\), there exists some polynomial \(P(x)\), such that the absolute value of \(f(x)-P(x)\) is less than \(\epsilon\) for all \(x\) in the given interval \([a,b]\).
+In other words, given some continuous function \(f\), for all \(\in \gt 0\), there exists some polynomial \(P(x)\), such that the absolute value of \(f(x)-P(x)\) is less than \(\in\) for all \(x\) in the given interval \([a,b]\).
 In other other words, if you have some function \(f(x)\) continous over an interval, and you draw a very small "strip" around that function on that interval, then you can always find a polynomial that fits within that strip (no matter how thin it is).
 For this class, we're just going to assume this theorem is true. If you want you can look up a proof!
 Anyway, the question we have to ask now is what kind of polynomials we will be using. If you haven't guessed it already, we'll be using Taylor Polynomials. They work really well because if \(f\) is differentiable \(n+1\) times on the interval [a,b], the Taylor Polynomial of degree \(n\) will work. Unfortunately, Taylor Polynomials are somewhat local, meaning they only work well when \(|x-x_0|\) is small.

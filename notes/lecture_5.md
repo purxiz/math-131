@@ -8,7 +8,7 @@ f(x) = f(x_o) + \frac{f'(x_o)}{1!}(x-x_o) + \frac{f''(x_o)}{2!}(x-x_o)^2 + \frac
 \]
 Suppose
 \[
-f\epsilon C^2([a,b])
+f\in C^2([a,b])
 \]
 To solve a root-finding problem, we are ultimately trying to solve the simple equation \(f(x)=0\).
 So, given that the Taylor Polynomial is equal to \(f(x)\), we are simply trying to solve:

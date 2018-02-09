@@ -83,12 +83,12 @@ Properties to look for in a good algortihm
 There are two main types of error
 1. The error is LINEAR (cumulative error):
 \[
-\epsilon_n=C_n+\epsilon_0
+\in_n=C_n+\in_0
 \]
-Where \(\epsilon_n\) is the error at the \(n^{th}\) step, \(C_n\) is some constant, and \(\epsilon_0\) is the error at step 0.
+Where \(\in_n\) is the error at the \(n^{th}\) step, \(C_n\) is some constant, and \(\in_0\) is the error at step 0.
 2. The error is EXPONENTIAL:
 \[
-\epsilon_n = C^n\epsilon_0
+\in_n = C^n\in_0
 \]
 Exponential error increases with each step, and is therefore almost always worse than Linear error.
 ## Rate of Convergence

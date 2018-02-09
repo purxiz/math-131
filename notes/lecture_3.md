@@ -68,7 +68,7 @@ cos(x) -x =0
 \]
 If you can't do it, don't worry. That's why numeric methods exist. We will study three methods for root finding problems. They are all very efficient, but all have benefits and drawbacks.
 ### Method 1: Bisection Method
-Let's say I wanted to solve \(f(x) = 0\) over some interval \([a,b]\). For now, we will simply assume \(f\epsilon C([a,b])\), i.e. that \(f\) is continuous over the interval \([a,b]\). Let's say that:
+Let's say I wanted to solve \(f(x) = 0\) over some interval \([a,b]\). For now, we will simply assume \(f\in C([a,b])\), i.e. that \(f\) is continuous over the interval \([a,b]\). Let's say that:
 \[
 f(a)*f(b)\lt0
 \]
@@ -76,7 +76,7 @@ We can easily see that if this is true, then \(f(a)\) and \(f(b)\) have opposite
 ![Graph](https://i.imgur.com/6UMJ2gv.png)
 Let's say that \(a=-1\) and \(b=1\), so \(f(a)=-1\) and \(f(b=1)\). From here it should be obvious that somewhere between -1 and 1, the line must cross the x axis at least once. This is called the Intermediate Value Theorem. In math terms:
 \[
-\exists c \epsilon [a,b] / f(c) = 0
+\exists c \in [a,b] / f(c) = 0
 \]
 Or in English, there exists some point \(C\) in \([a,b]\) such that \(f(c)=0\). The idea of the bisection method is to continue halving the interval, and comparing the signs of \(f(a)\) and \(f(b)\) to get closer and closer to the root. <br>
 Bisection is nice because it always finds a solution. However, it doesn't necessarily find ALL solutions. For example, if there are multiple zeros in \([a,b]\), bisection will not find more than one. It is also relatively slow to converge.
