@@ -1,20 +1,24 @@
+---
+title: lecture 5
+---
 ## Lecture 5
 
 ## Newton's Method
 Newton's Method is the most powerful root finding algorithm.
 There are several methods to find Newton's Method, the first is to use Taylor's Theorem, reproduced here:
-\[
+$$
 f(x) = f(x_o) + \frac{f'(x_o)}{1!}(x-x_o) + \frac{f''(x_o)}{2!}(x-x_o)^2 + \frac{f^n(\xi(x))}{n!}(x-x_o)^n
-\]
+$$
+
 Suppose
-\[
-f\in C^2([a,b])
-\]
+$$
+f\epsilon C^2([a,b])
+$$
 To solve a root-finding problem, we are ultimately trying to solve the simple equation \(f(x)=0\).
 So, given that the Taylor Polynomial is equal to \(f(x)\), we are simply trying to solve:
-\[
+$$
 0 = f(x_o) + \frac{f'(x_o)}{1!}(x-x_o) + \frac{f''(x_o)}{2!}(x-x_o)^2 + \frac{f^n(\xi(x))}{n!}(x-x_o)^n
-\]
+$$
 If we assume that x and \(x_0\) are close together, then we can say that the \(x-x_0\) term in each part of the Taylor Polynomial is close to zero. And even more importantly, that the error term is very close to zero.
 \[
 0 \approx f(x_o) + \frac{f'(x_o)}{1!}(x-x_o)
@@ -23,7 +27,9 @@ The above is what we are left with taking a Taylor Polynomial with n = 1, and di
 \[
 x \approx x_0 - \frac{f(x_0)}{f'(x_0)}
 \]
-The above is Newton's Method. Note that an important constraints is that \(f'(x_0) \ne 0\). This doesn't make the method weaker, because if \(f'(x_0) = 0\), then you can see \(f(x_0)\) must equal zero, and therefore \(x_0\) is a root.
+
+The above is Newton's Method. Note that an important constraints is that \\(f'(x_0) \ne 0\\). This doesn't make the method weaker, because if \\(f'(x_0) = 0\\), then you can see \\(f(x_0)\\) must equal zero, and therefore \\(x_0\\) is a root.
+
 ### Geometric Interpretation of Newton's Method
 Start with the equation for the tangent line:
 \[
@@ -32,8 +38,11 @@ y=f(x_0)+f'(x_0)(x-x_0)
 ![Tangent Lines](https://i.imgur.com/Um6kQQx.png)
 If you take the tangent line at the point \(x_0,f(x_0)\) shown in the image above, you will see that it appears somewhat close to the root. The closer your \(x_0\) gets to the true root x, the closer the tangent line will also be. Much like bisection method, this is an iterative approach where we move closer and closer to the true root with each iteration.<br>
 To get our new \(x_0\) for the next iteration, we can simply look at where the tangent line of the previous \(x_0\) intersects with the x-axis.
+
+for 
 ![Newton's Method](https://i.imgur.com/mbKSRDw.png)
 img src: math.lamar.edu
+
 ## Pseudocode
 ```
   x0 = 1 %The initial value

@@ -1,3 +1,6 @@
+---
+title: lecture 8
+---
 ## Lecture 8
 ## More Divided Differences
 \[

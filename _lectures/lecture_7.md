@@ -1,3 +1,6 @@
+---
+title: lecture 7
+---
 ## Lecture 7
 
 ## Error Analysis of Lagrange Interpolant
