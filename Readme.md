@@ -15,7 +15,7 @@ $ bundle install
 Generate the website (with live reload):
 
 ```
-$ bundle exec jekyll liveserve
+$ bundle exec jekyll liveserve --baseurl ""
 ```
 
 (open browser to `localhost:4000`)
