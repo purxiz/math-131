@@ -2,13 +2,14 @@
 title: Lecture 2
 ---
 
+
 ## Round-off Error
 
 Suppose that \\(p^* \\) approximates \\(p\\):
 
 1. \\(p-p^* \\) = the actual Error
 2. \\( \frac{\|{p-p^* }\|}{\|p\|} \\) is the relative error
-3. \\(|p-p^* |\\) is the absolute error
+3. \\(\|p-p^* \|\\) is the absolute error
 
 The relative error is usually more significant, i.e. more practical to use
 ### example:
