@@ -16,8 +16,8 @@
 title: "Math-131: Lecture notes for Spring 2018"
 email: ccarvalho3@ucmerced.edu
 description: >- # this means to ignore newlines until "baseurl:"
-  These are lectures notes taken by Purxiz (github.com/purxiz) for the class "Math 131: Numerical methods for engineers and scientists" for Spring 2018, 
-  given at the University of California, Merced. Thanks to Purxiz for putting those notes together. Typos might be there, don't hesitate to reach out of make corrections.
+  These are lectures notes kindly typed by Purxiz (github.com/purxiz) for the class "Math 131: Numerical methods for engineers and scientists" for Spring 2018, 
+  given at the University of California, Merced. Thanks to Purxiz for putting those notes together. Typos might be there, don't hesitate to reach out to make corrections.
 baseurl: "/math-131" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
