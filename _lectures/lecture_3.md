@@ -1,7 +1,6 @@
 ---
-title: lecture 3
+title: Lecture 3
 ---
-## Lecture 3
 
 ## Rate of Convergence
 Suppose:
@@ -52,9 +51,9 @@ Find the rate of convergence of \\(f\\) as \\(h \rightarrow 0\\)
 1. Using Taylor's Theorem with n=1
 2. Using Taylor's Theorem with n=3
 
-Reclal that the Taylor Theorem expansion is of the form
+Recall that the Taylor Theorem gives us
 $$
-f(x) = f(x_o) + \frac{f'(x_o)}{1!}(x-x_o) + \frac{f''(x_o)}{2!}(x-x_o)^2 + \frac{f^n(\xi(x))}{n!}(x-x_o)^n
+f(x) = f(x_o) + \frac{f'(x_o)}{1!}(x-x_o) + \frac{f''(x_o)}{2!}(x-x_o)^2 +...+ \frac{f^n(\xi(x))}{n!}(x-x_o)^n
 $$
 The Taylor Theorem of for 1. above, would therefore include term 0 and 1, and the remainder term, so:
 $$
@@ -76,9 +75,9 @@ for an easy example, Solve \\(x^2-1=0\\). However, for more complicated examples
 $$
 cos(x) -x =0
 $$
-If you can't do it, don't worry. That's why numeric methods exist. We will study three methods for root finding problems. They are all very efficient, but all have benefits and drawbacks.
+If you can't do it, don't worry. That's why numerical methods exist. We will study three methods for root finding problems. They are all very efficient, but all have benefits and drawbacks.
 ### Method 1: Bisection Method
-Let's say I wanted to solve \(f(x) = 0\) over some interval \\([a,b]\\). For now, we will simply assume \\(f\epsilon C([a,b])\\), i.e. that \\(f\\) is continuous over the interval \([a,b]\). Let's say that:
+Let's say I wanted to solve \(f(x) = 0\) over some interval \\([a,b]\\). For now, we will simply assume \\(f\in C([a,b])\\), i.e. that \\(f\\) is continuous over the interval \([a,b]\). Let's say that:
 $$
 f(a)*f(b)\lt0
 $$
@@ -86,7 +85,7 @@ We can easily see that if this is true, then \\(f(a)\\) and \\(f(b)\\) have oppo
 ![Graph](https://i.imgur.com/6UMJ2gv.png)
 Let's say that \\(a=-1\\) and \\(b=1\\), so \\(f(a)=-1\\) and \\(f(b=1)\\). From here it should be obvious that somewhere between -1 and 1, the line must cross the x axis at least once. This is called the Intermediate Value Theorem. In math terms:
 $$
-\exists c \epsilon [a,b] / f(c) = 0
+\exists c \in [a,b] / f(c) = 0
 $$
 Or in English, there exists some point \\(C\\) in \\([a,b]\\) such that \\(f(c)=0\\). The idea of the bisection method is to continue halving the interval, and comparing the signs of \\(f(a)\\) and \\(f(b)\\) to get closer and closer to the root. <br>
 Bisection is nice because it always finds a solution. However, it doesn't necessarily find ALL solutions. For example, if there are multiple zeros in \\([a,b]\\), bisection will not find more than one. It is also relatively slow to converge.
