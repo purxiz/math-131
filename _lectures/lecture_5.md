@@ -5,7 +5,7 @@ title: lecture 5
 
 ## Newton's Method
 Newton's Method is the most powerful root finding algorithm.
-There are several methods to find Newton's Method, the first is to use Taylor's Theorem, reproduced here:
+There are several methods to find Newton's Method, the first is to use Taylor's Theorem, reproduced here:  
 $$
 f(x) = f(x_o) + \frac{f'(x_o)}{1!}(x-x_o) + \frac{f''(x_o)}{2!}(x-x_o)^2 + \frac{f^n(\xi(x))}{n!}(x-x_o)^n
 $$
@@ -14,12 +14,12 @@ Suppose
 $$
 f\epsilon C^2([a,b])
 $$
-To solve a root-finding problem, we are ultimately trying to solve the simple equation \(f(x)=0\).
-So, given that the Taylor Polynomial is equal to \(f(x)\), we are simply trying to solve:
+To solve a root-finding problem, we are ultimately trying to solve the simple equation \(f(x)=0\).  
+So, given that the Taylor Polynomial is equal to \(f(x)\), we are simply trying to solve:  
 $$
 0 = f(x_o) + \frac{f'(x_o)}{1!}(x-x_o) + \frac{f''(x_o)}{2!}(x-x_o)^2 + \frac{f^n(\xi(x))}{n!}(x-x_o)^n
-$$
-If we assume that x and \(x_0\) are close together, then we can say that the \(x-x_0\) term in each part of the Taylor Polynomial is close to zero. And even more importantly, that the error term is very close to zero.
+$$  
+If we assume that x and \(x_0\) are close together, then we can say that the \(x-x_0\) term in each part of the Taylor Polynomial is close to zero. And even more importantly, that the error term is very close to zero.  
 \[
 0 \approx f(x_o) + \frac{f'(x_o)}{1!}(x-x_o)
 \]
