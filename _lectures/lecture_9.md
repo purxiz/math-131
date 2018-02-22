@@ -9,7 +9,7 @@ Today we will be going over:
 
 ## Chapter 4: Numerical Differentiation and Integration
 
-The general method of numerical differentiation is called the (n+1)-point formula. Recall that differentiation and integration are defined simply by:
+The general method of numerical differentiation is called the (n+1)-point formula. Recall that differentiation and integration are defined simply by:  
 $$
 f'(x_0) \approx \frac{f(x)-f(x_0)}{x-x_0}
 $$  
