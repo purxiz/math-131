@@ -1,10 +1,9 @@
 ---
 title: lecture 9
 ---
-## Lecture 9
 
 ## Quick Summary
-In lecture 8, we went over the cubic spline interpolant. Recall that interpolation in general is a strategy to approximate a function given several data points \\((x,y)\\) for that function.  We started with the Lagrange Interpolant, which matches a single polynomial to the data points. However, the Lagrange Interpolant oscillates wildly around the endpoints of the graph, and can occasionally just oscillate extremely wildly around every data point. Cubic splines solve this problem by calculating the Lagrange Interpolant piece-wise. More data about Cubic Splines can be found in the lecture 8 notes.
+In lecture 8, we went over the cubic spline interpolant. Recall that interpolation in general is a strategy to approximate a function given several data points \\((x,y)\\) for that function.  We started with the Lagrange Interpolant, which matches a single polynomial to the data points. However, the Lagrange Interpolant oscillates wildly around the endpoints of the graph, and can occasionally just oscillate extremely wildly around every data point. Cubic splines solve this problem by calculating an interpolant piece-wisely. More data about Cubic Splines can be found in the lecture 8 notes.
 Today we will be going over:
 
 ## Chapter 4: Numerical Differentiation and Integration
@@ -26,7 +25,7 @@ L_{1,0}(x) = \frac{x-x_1}{x_0-x_1}
 $$
 and
 $$
-L_{1,1}(x) = \frac{x-x_0}{x1-x_0}
+L_{1,1}(x) = \frac{x-x_0}{x_1-x_0}
 $$  
 If we substitute \\(x_1 = x_0+h\\) again, we get something like:  
 $$
@@ -61,9 +60,9 @@ There are two different 3 point formulas.
 $$
 \textrm{Midpoint: } f'(x_0) = \frac{f(x_0+h)-f(x-0)}{2h}-\frac{h^2}{6}f''(\xi(x))
 $$  
-The three point formula converges at a rate of \\(O(n^2)\\). The other three point formula is called the end point formula. You won't have to memorize either of these.  
+The three point formula converges at a rate of \\(O(h^2)\\). The other three point formula is called the end point formula. You won't have to memorize either of these.  
 $$
-\textrm{Endpoint: } \frac{f'(x_0) = -3f(x_0)+4f(x_0+h)-f(x_0+2h)}{2h}-\frac{h^2}{6}f''(\xi(x))
+\textrm{Endpoint: }f'(x_0) =  \frac{-3f(x_0)+4f(x_0+h)-f(x_0+2h)}{2h}-\frac{h^2}{6}f''(\xi(x))
 $$  
 The midpoint formula takes one point in the middle, and one point on either side, while the endpoint formula takes one point and the two points after it.  
 ### Example
@@ -78,7 +77,7 @@ x & f(x) & f'(x) \\
 $$  
 The goal here is to complete the table. You have to choose which 3 point formula is superior in this case. It should be obvious that you can't use the midpoint formula for \\(x = 0\\) or \\(x = 0.6\\) as they have no points before them, or after them, respectively. So we'll start with using the endpoint formula on \\(x = 0 \\).  
 $$
-\frac{f'(0) = -3f(0)+4f(0+0.2)-f(0+2(0.2))}{2(0.2)}-\frac{(0.2)^2}{6}f''(\xi(x))
+f'(0) = \frac{-3f(0)+4f(0+0.2)-f(0+2(0.2))}{2(0.2)}-\frac{(0.2)^2}{6}f''(\xi(x))
 $$  
 Solving completely we get:  
 $$

@@ -1,28 +1,27 @@
 ---
 title: lecture 10
 ---
-## Lecture 10
 ## Analytic vs Numerical Method
 
 In calculus, you do something like:  
 $$
-f^n(x) \leftarrow f(x) \rightarrow \int_a^bf(x)dx
+f^{(n)}(x) \leftarrow f(x) \rightarrow \int_a^bf(x)dx
 $$  
 In Numerical, we start with the Lagrange Interpolant, and do some other stuff:  
 $$
-????? \leftarrow \textrm{Lagrange Interpolant} \rightarrow ????
+????? \leftarrow\textrm{Lagrange Interpolant: }f(x) = P(x) + error \rightarrow ????
 $$  
 Actually, it's pretty simple, we essentially just transform the function into a polynomial using the Lagrange Interpolant, and then we can differentiate that polynomial. It's really easy to differentiate polynomials, so that's a pretty solid method.  
 So for our differentiation, we simply have:  
 $$
-f'(x)=P'(x) + error' \leftarrow \textrm{Lagrange Interpolant} \rightarrow ????
+f'(x)=P'(x) + error' \leftarrow \textrm{Lagrange Interpolant: }f(x) = P(x) + error \rightarrow ????
 $$  
 Where P is our Lagrange Polynomial. Integration, should be obvious, is just given by:  
 $$
-f'(x)=P'(x) + error' \leftarrow \textrm{L I} \rightarrow \int_a^bf(x)dx=\int_a^bP(x)dx+\int_a^b\textrm{error }dx
+f'(x)=P'(x) + error' \leftarrow  \textrm{Lagrange Interpolant: }f(x) = P(x) + error \rightarrow \int_a^bf(x)dx=\int_a^bP(x)dx+\int_a^b\textrm{error }dx
 $$  
 ## Numerical Integration
-Today we'll be looking at the (n+1) point formula again. This time the Newton's-Cotes version, which converges as a rate of \\(O(h^{2n+1})\\).  
+Today we'll be looking at the (n+1) point formula again, but for integration. This is called the Newton's-Cotes formula, which converges as a rate of \\(O(h^{2n+1})\\).  
 Suppose our goal is to compute  
 $$
 \int_a^bf(x)dx
