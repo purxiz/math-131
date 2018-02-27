@@ -1,5 +1,5 @@
 ---
-title: lecture 9
+title: Lecture 9
 ---
 
 ## Quick Summary

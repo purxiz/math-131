@@ -1,5 +1,5 @@
 ---
-title: lecture 10
+title: Lecture 10
 ---
 ## Analytic vs Numerical Method
 
