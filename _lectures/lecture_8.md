@@ -1,5 +1,5 @@
 ---
-title: lecture 8
+title: lecture 8 (More Divided Differences and Cubic Splines)
 ---
 ## Lecture 8
 ## More Divided Differences

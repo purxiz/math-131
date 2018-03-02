@@ -1,5 +1,5 @@
 ---
-title: lecture 3
+title: lecture 3 (Rate of Convergence and Bisection Method)
 ---
 ## Lecture 3
 

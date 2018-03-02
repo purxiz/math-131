@@ -1,5 +1,5 @@
 ---
-title: lecture 5
+title: lecture 5 (Newton's Method)
 ---
 ## Lecture 5
 

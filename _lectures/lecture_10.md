@@ -1,5 +1,5 @@
 ---
-title: lecture 10
+title: lecture 10 (Starting Numerical Integration, Trapezoid Rule, and Simpson's Rule)
 ---
 ## Lecture 10
 ## Analytic vs Numerical Method

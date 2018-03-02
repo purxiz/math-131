@@ -1,5 +1,5 @@
 ---
-title: Lecture 11  
+title: Lecture 11   (Composite Rules for Numerical Integration)
 ---
 ## Lecture 11
 
@@ -65,9 +65,9 @@ $$
 $$  
 The above is one way of solving that problem. We just take our limits as 2k, to skip odd numbers. We have to adjust our maximum to \\(\frac{n}{2}-1\\) to ensure that \\(2k\\) doesn't go above n. If we expand that sum out, we get:  
 $$
-\frac{h}{3} \sum\limits_{k=0}^{\frac{n}{2}-1}\left( f(x_{2k}+4f(x_{2k+1}) + f(x_{2k+2})) \right) - \frac{h^4}{90}(b-a)f^{4}(\xi(x))
+\frac{h}{3} \sum\limits_{k=0}^{\frac{n}{2}-1}\left( f(x_{2k}+4f(x_{2k+1}) + f(x_{2k+2})) \right) - \frac{h^4}{180}(b-a)f^{4}(\xi(x))
 $$    
-The error term was derived in the same way as the one for Composite Trapezoid Rule. 
+The error term was derived in the same way as the one for Composite Trapezoid Rule. You'll notice that the original error term for Simpson's Rule had \\(\frac{h^4}{90}\\), but since Simpson's looks at 3 points, our intervals are now 2h wide, which is where the factor of two comes from.)
 ## Pseudocode
 
 Here is an implementation of composite Simpson's Rule in Python. Everything should be pretty obvious, except maybe `for i in range(1, n, 2)`. In Python, this simply means count from 1 to n, with a step size of 2. It's just ordered differently from matlab

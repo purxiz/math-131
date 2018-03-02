@@ -1,5 +1,5 @@
 ---
-title: Lecture 2
+title: Lecture 2 (Basic Error and Some Definitions)
 ---
 
 

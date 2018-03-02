@@ -1,5 +1,5 @@
 ---
-title: lecture 9
+title: lecture 9 (Numerical Differentiation)
 ---
 ## Lecture 9
 

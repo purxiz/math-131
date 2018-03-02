@@ -1,5 +1,5 @@
 ---
-title: lecture 7
+title: lecture 7 (Error of Lagrange, and Newton's Divided Differences)
 ---
 ## Lecture 7
 

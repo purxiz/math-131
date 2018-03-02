@@ -1,5 +1,5 @@
 ---
-title: lecture 6
+title: lecture 6 (Interpolation and Lagrage Polynomials)
 ---
 
 ## Interpolation
