@@ -1,5 +1,5 @@
 ---
-title: Lecture 12 (Round Off Error Stability)
+title: Lecture 12 (Round Off Error Stability and ODEs)
 ---
 ## Lecture 12
 Today we will be talking about round-effor error stability and other quadrature rules.
@@ -37,3 +37,18 @@ $$
 E(h) \leq (b-a)\epsilon
 $$  
 Our final result is that our error does not depend on \\(h\\), so it is is Stable! 
+## Initial Value Problems for ODEs
+Well-posed Initial Value Problems are of the following form:  
+$$
+\frac{dy}{dt}=f(y,t), \textrm{ } a \leq t \leq b,\textrm{ } y(a) = \alpha
+$$  
+### example
+$$
+\frac{dy}{dt} = 2y + e^{-t}+\frac{y^2}{t}
+$$  
+This is a really terrible problem to solve, so who cares about the exact solution. Let's just figure out a numerical solution! 
+Our first questions to ask before doing any solving:  
+1. Does the IVP have a solution? (Existence)
+2. Is this solution uniqueness (Uniqueness)
+3. Is the solution STABLE? (Stability)
+We will talk about stability in many different ways, so be careful about which test for stability you are applying in the future. Note: Stability implies that a small perturbation of the initial condtion and/or equation only imply small perturbations of the solution. 

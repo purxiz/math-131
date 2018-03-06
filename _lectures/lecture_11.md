@@ -36,7 +36,7 @@ $$
 $$  
 If you expand that out, you'll notice that for every value except the endpoints, it is added twice. i.e. if you look at the first two terms listed out above, \\(x_1\\) appears twice, and if we continued to list out terms, the same would be true until the last term. Therefore, we can also write the rule as:  
 $$
-\frac{h}{2}\left( f(x_0) + 2\sum\limits_{k=1}^{n-1}f(x_k) + f(x_n) \right) - \frac{h^3}{12}nf''(\xi(x))
+\frac{h}{2}\left( f(x_0) + 2\sum\limits_{k=1}^{n-1}f(x_k) + f(x_{k+1}) \right) - \frac{h^3}{12}nf''(\xi(x))
 $$  
 Let's take a quick gander at the error term above. We've somehow ended up with an \\(n\\) hanging out in there. From way back when, remember that h is the "length" of each of our subintervals, and therefore \\(h = \frac{b-a}{n}\\). From there some simple algebra reveals that \\(n=\frac{b-a}{h}\\). If we look at our error term:  
 $$
