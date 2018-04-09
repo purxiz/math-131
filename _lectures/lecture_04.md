@@ -1,5 +1,5 @@
 ---
-title: Lecture 4
+title: Lecture 4: Fixed-Point iteration (To be completed)
 ---
 
 ## Fixed-Point iteration (To be completed)
