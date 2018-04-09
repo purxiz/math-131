@@ -1,6 +1,7 @@
 ---
-title: Lecture 10
+title: lecture 10 (Starting Numerical Integration, Trapezoid Rule, and Simpson's Rule)
 ---
+
 ## Analytic vs Numerical Method
 
 In calculus, you do something like:  
@@ -14,6 +15,7 @@ $$
 Actually, it's pretty simple, we essentially just transform the function into a polynomial using the Lagrange Interpolant, and then we can differentiate that polynomial. It's really easy to differentiate polynomials, so that's a pretty solid method.  
 So for our differentiation, we simply have:  
 $$
+
 f'(x)=P'(x) + error' \leftarrow \textrm{Lagrange Interpolant: }f(x) = P(x) + error \rightarrow ????
 $$  
 Where P is our Lagrange Polynomial. Integration, should be obvious, is just given by:  
@@ -22,6 +24,7 @@ f'(x)=P'(x) + error' \leftarrow  \textrm{Lagrange Interpolant: }f(x) = P(x) + er
 $$  
 ## Numerical Integration
 Today we'll be looking at the (n+1) point formula again, but for integration. This is called the Newton's-Cotes formula, which converges as a rate of \\(O(h^{2n+1})\\).  
+
 Suppose our goal is to compute  
 $$
 \int_a^bf(x)dx

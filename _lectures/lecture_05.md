@@ -1,10 +1,10 @@
 ---
-title: Lecture 5
+title: lecture 5 (Newton's Method)
 ---
 
 ## Newton's Method
 Newton's Method is the most powerful root finding algorithm.
-There are several methods to find Newton's Method, the first is to use Taylor's Theorem, reproduced here:
+There are several methods to find Newton's Method, the first is to use Taylor's Theorem, reproduced here:  
 $$
 f(x) = f(x_o) + \frac{f'(x_o)}{1!}(x-x_o) + \frac{f''(x_o)}{2!}(x-x_o)^2 +...+ \frac{f^n(\xi(x))}{n!}(x-x_o)^n
 $$
