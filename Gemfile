@@ -4,7 +4,7 @@ gem "jekyll"
 gem "jekyll-redirect-from"
 gem "jekyll-paginate"
 gem "jekyll-sitemap"
-gem 'nokogiri', '< 1.6.8'
+gem 'nokogiri', '< 1.10.9'
 gem "jekyll-feed"
 gem "html-proofer"
 gem "redcarpet"
