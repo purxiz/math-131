@@ -1,7 +1,6 @@
 ---
 title: Lecture 11   (Composite Rules for Numerical Integration)
 ---
-## Lecture 11
 
 ### Last time
 We took a look at the **Newton's Cotes Formula**, which is defined for all \\(n \geq 1\\), and has an order of \\(O(h^{2n+1})\\).  

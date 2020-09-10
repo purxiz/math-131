@@ -1,7 +1,7 @@
 ---
 title: lecture 8 (More Divided Differences and Cubic Splines)
 ---
-## Lecture 8
+
 ## More Divided Differences
 $$
 f[x_j,x_{j+1}] = \frac{f(x_{j+1}) - f(x_j)}{x_{j+1}-x_j}
@@ -65,6 +65,7 @@ S_j''(x_{j+1}) = S_{j+1}''(x_{j+1}) \textrm { for } j=0,...,n-2
 $$  
 For the first and second derivative, we don't always know \\(f'\\) or \\(f''\\), so we don't need \\(S_j'\\) or \\(S_j''\\) to match the function f. We will see that having them match each other guarantees a continuity of the derivative and second derivative, which helps with accuracy.  
 To summarize:  
+
 1. \\(S(x) = S_j(x)\\) over \\([x_j,x_{j=1}]\\) for \\(j=0,1,...,n-1\\)
 2. \\(S_j(x) =A_j+B_j(x-x_j)+C_j(x-x_j)^2+D_j(x-x_j)^3\\)
 3. \\(S_j(x_{j+1})=S_{j+1}(x_{j+1}) = f(x_{j+1}) \textrm { for } j=0,...,n-1\\)
@@ -92,6 +93,7 @@ $$
 This means that we have a fourth order error bound. In other words, for small \\(h\\), error will be very small.
 ### example
 Build the natural cubic spline  
+
 $$
 \begin{array}{c|c}
 x & f(x) \\
@@ -100,6 +102,7 @@ x & f(x) \\
 10 & 1.1 \\
 0.5 & 1.3
 \end{array}
+
 $$  
 First, let's just start with \\(S_0(x)\\).  
 $$
@@ -110,6 +113,7 @@ $$
 S_0(x_0) = A_0 = f(x_0) = 0.8
 $$  
 Let's switch gears over to looking at the coefficients. It should be relatively obvious that:  
+
 $$
 A_1 = 0.9, A_2 = 1.1
 $$

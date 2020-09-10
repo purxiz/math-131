@@ -1,7 +1,8 @@
 ---
 title: Lecture 12 (Round Off Error Stability and ODEs)
 ---
-## Lecture 12
+
+=======
 Today we will be talking about round-effor error stability and other quadrature rules.
 ## Round off Error Stability
 Suppose that we make an error while evaluating \\(f(x_k)\\) on \\(k = 0,...,n\\).  

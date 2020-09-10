@@ -13,10 +13,11 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Math-131
-email: your-email@example.com
+title: "Math-131: Lecture notes for Spring 2018"
+email: ccarvalho3@ucmerced.edu
 description: >- # this means to ignore newlines until "baseurl:"
-  Notes for the math-131 course "Numerical Analysis" at UC Merced, Spring 2018
+  These are lectures notes kindly typed by Purxiz (github.com/purxiz) for the class "Math 131: Numerical methods for engineers and scientists" for Spring 2018, 
+  given at the University of California, Merced. Thanks to Purxiz (and Elsie) for putting those notes together. Typos might be there, don't hesitate to reach out to make corrections.
 baseurl: "/math-131" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb

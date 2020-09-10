@@ -1,7 +1,6 @@
 ---
 title: lecture 7 (Error of Lagrange, and Newton's Divided Differences)
 ---
-## Lecture 7
 
 ## Error Analysis of Lagrange Interpolant
 Let's remember that the Lagrange polynomial is given by:  
